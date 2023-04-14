@@ -19,16 +19,16 @@ const getFileByFileName = async (fileName) => {
       .slice(1)
       .map((line) => {
         const values = line.split(",");
-        const [text, number, hex] = values;
-        /* if (values.length !== 4) {
+
+        if (values.length !== 4) {
           console.warn(`Invalid line in file ${fileName}:`, line);
           return null;
         }
-        
+        const [file, text, number, hex] = values;
         if (!text || isNaN(number) || hex.length !== 32) {
-          console.warn(`Invalid values in line of file ${fileName}:`, line);
+          //console.warn(`Invalid values in line of file ${fileName}:`, line);
           return null;
-        }*/
+        }
         //return { text, number: Number(number), hex };
         return { text, number: number, hex };
       })
